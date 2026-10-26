@@ -19,6 +19,7 @@
         DOTNET_EnableDiagnostics=0
     
     USER $APP_UID
-    
-    # Render PORT verir. Yoksa 10000.
-    ENTRYPOINT ["sh", "-c", "ASPNETCORE_URLS=http://0.0.0.0:${PORT:-10000} exec dotnet UploadFileStorageAPI.dll"]
+
+    EXPOSE 8080
+
+    ENTRYPOINT ["dotnet", "UploadFileStorageAPI.dll"]
