@@ -22,8 +22,8 @@ builder.Services.AddRateLimiter(options =>
     // Aynı anda en fazla 1 dönüştürme (0.1 CPU / 512 MB)
     options.AddConcurrencyLimiter("upload", o =>
     {
-        o.PermitLimit = 1;
-        o.QueueLimit = 2;
+        o.PermitLimit = 4;
+        o.QueueLimit = 8;
         o.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
     });
 
