@@ -49,7 +49,7 @@ app.UseMiddleware<Middleware>();
 
 app.MapGet("/health", () =>
 {
-    var result = new { isSuccess = true, status = StatusCodes.Status200OK, timestamp = DateTime.UtcNow, version = "1.0.0" };
+    var result = new { isSuccess = true, status = StatusCodes.Status200OK, timestamp = DateTime.UtcNow, version = "1.0.0", appName = "Upload File Storage API" };
     return Results.Ok(result);
 })
 .WithName("HealthCheck");
